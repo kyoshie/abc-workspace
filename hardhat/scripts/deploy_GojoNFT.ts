@@ -1,8 +1,7 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const GojoCoin = await ethers.getContractFactory("GojoCoin");
-  const contract = await GojoCoin.deploy(1000000);
+  const contract = await ethers.deployContract("GojoNFT");
   await contract.waitForDeployment();
   console.log(
     `deployed to ${contract.target}`
